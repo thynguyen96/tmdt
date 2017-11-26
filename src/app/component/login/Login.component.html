@@ -1,0 +1,44 @@
+<!-- <div>
+    <table>
+        <tr>
+            <th>User</th>
+            <th>Name</th>
+        </tr>
+        <tr *ngFor="let items of list">
+            <td>{{items.topicID}}</td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+ -->
+
+<div class="container"> 
+    <label for="">
+        {{sms}}
+    </label>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+
+            <form   (ngSubmit)="login() && loginGroup.valid"  [formGroup]="loginGroup"  >
+                <legend>Form title</legend>
+
+                <div class="form-group">
+                    <!-- <label  *ngIf=" loginGroup.controls['email'].errors.required"  for=""> emailk dc de trong </label> -->
+                    <input 	formControlName="username"   type="text" class="form-control" id="" placeholder="Input field">
+                </div>
+                <div class="form-group">
+                    <!-- <label  *ngIf=" loginGroup.controls['password'].errors.required"  for=""> mk > 8 ki tu </label> -->
+                    
+                    <input formControlName="password"   type="text" class="form-control" id="" placeholder="Input field">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<pre>{{ loginGroup.value | json}}</pre>
+<button (click)="login()">Login</button>
+<button (click)="logout()">Logout</button>
